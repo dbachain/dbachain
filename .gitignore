@@ -1,0 +1,30 @@
+# OS
+.DS_Store
+*.swp
+*.swo
+.vscode
+.idea
+
+dbachain.iml
+
+# Build
+build
+tools/bin/*
+examples/build/*
+docs/_build
+cmd/dbachaincli/dbachaincli
+cmd/dbachaind/dbachaind
+
+# Data - ideally these don't exist
+examples/basecoin/app/data
+baseapp/data/*
+
+# Testing
+coverage.txt
+profile.out
+
+### Vagrant ###
+.vagrant/
+*.box
+*.log
+vagrant

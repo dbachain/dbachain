@@ -1,0 +1,73 @@
+version: '2.1'
+services:
+
+    # Tendermint    
+    seed:
+        image: gaiatest
+        container_name: seed
+        volumes:
+            - /root/.gaia-test:/root/.gaia-test
+
+        entrypoint: ""
+        command: bash -c "($gen_txs_exist ||
+            gaiad init gen-tx --home /root/.gaia-test/seed &&
+            gaiad init --gen-txs --home /root/.gaia-test/seed --chain-id=gaia-test -o &&
+            sed -i 's/addr_book_strict = true/addr_book_strict = false/g' /root/.gaia-test/seed/config/config.toml) &&
+            gaiad start --home /root/.gaia-test/seed"
+        healthcheck:
+            test: ["CMD-SHELL", "test -d /root/.gaia-test/seed/config/gentx"]
+            interval: 10s
+            timeout: 2s
+            retries: 3
+            
+    gaia-1:
+        image: gaiatest
+        container_name: gaia-1
+        volumes:
+            - /root/.gaia-test:/root/.gaia-test
+        entrypoint: ""
+        depends_on:
+            seed:
+                condition: service_healthy 
+            
+        restart: always
+        command: bash -c "($gen_txs_exist ||
+            mkdir -p /root/.gaia-test/gaiad2/config/gentx &&
+            cp -f /root/.gaia-test/seed/config/gentx/* /root/.gaia-test/gaiad2/config/gentx/ &&
+            gaiad init --gen-txs --home /root/.gaia-test/gaiad2 --chain-id=gaia-test -o &&
+            sed -i 's/addr_book_strict = true/addr_book_strict = false/g' /root/.gaia-test/gaiad2/config/config.toml) &&
+            gaiad start --home /root/.gaia-test/gaiad2"
+
+    gaia-2:
+        image: gaiatest
+        container_name: gaia-2
+        volumes:
+            - /root/.gaia-test:/root/.gaia-test
+        entrypoint: ""
+        depends_on:
+            seed:
+                condition: service_healthy 
+        restart: always
+        command: bash -c "($gen_txs_exist ||
+            mkdir -p /root/.gaia-test/gaiad3/config/gentx &&
+            cp -f /root/.gaia-test/seed/config/gentx/* /root/.gaia-test/gaiad3/config/gentx/ &&
+            gaiad init --gen-txs --home /root/.gaia-test/gaiad3 --chain-id=gaia-test -o &&
+            sed -i 's/addr_book_strict = true/addr_book_strict = false/g' /root/.gaia-test/gaiad3/config/config.toml) &&
+            gaiad start --home /root/.gaia-test/gaiad3"
+
+    gaia-3:
+        image: gaiatest
+        container_name: gaia-3
+        volumes:
+            - /root/.gaia-test:/root/.gaia-test
+        entrypoint: ""
+        depends_on:
+            seed:
+                condition: service_healthy 
+        restart: always
+        command: bash -c "($gen_txs_exist ||
+            mkdir -p /root/.gaia-test/gaiad4/config/gentx &&
+            cp -f /root/.gaia-test/seed/config/gentx/* /root/.gaia-test/gaiad4/config/gentx/ &&
+            gaiad init --gen-txs --home /root/.gaia-test/gaiad4 --chain-id=gaia-test -o &&
+            sed -i 's/addr_book_strict = true/addr_book_strict = false/g' /root/.gaia-test/gaiad4/config/config.toml) &&
+            gaiad start --home /root/.gaia-test/gaiad4"

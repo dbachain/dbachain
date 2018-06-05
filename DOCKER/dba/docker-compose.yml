@@ -1,0 +1,45 @@
+version: '2'
+services:
+
+    # LCD server
+    dba-0:
+        image: tendermint/dbachain:develop
+        container_name: dba-0
+        volumes:
+            - ~/volumes/dbachain/dba-0:/dbachaincli
+        command: bash -c "dbachaincli rest-server"
+        ports:
+            - 1317:1317
+
+    # Tendermint
+    tm-0:
+        image: tendermint/dbachain:develop
+        container_name: tm-0
+        volumes:
+            - ~/volumes/dbachain/dba-0/dbachaind:/dbachaind
+        entrypoint: ""
+        command: bash -c "dbachaind unsafe_reset_all --home /dbachaind && dbachaind init --home /dbachaind && dbachaind start --home /dbachaind"
+
+    tm-1:
+        image: tendermint/dbachain:develop
+        container_name: tm-1
+        volumes:
+            - ~/volumes/dbachain/dba-1/dbachaind:/dbachaind
+        entrypoint: ""
+        command: bash -c "dbachaind unsafe_reset_all --home /dbachaind && dbachaind init --home /dbachaind && dbachaind start --home /dbachaind"
+
+    tm-2:
+        image: tendermint/dbachain:develop
+        container_name: tm-2
+        volumes:
+            - ~/volumes/dbachain/dba-2/dbachaind:/dbachaind
+        entrypoint: ""
+        command: bash -c "dbachaind unsafe_reset_all --home /dbachaind && dbachaind init --home /dbachaind && dbachaind start --home /dbachaind"
+
+    tm-3:
+        image: tendermint/dbachain:develop
+        container_name: tm-3
+        volumes:
+            - ~/volumes/dbachain/dba-3/dbachaind:/dbachaind
+        entrypoint: ""
+        command: bash -c "dbachaind unsafe_reset_all --home /dbachaind && dbachaind init --home /dbachaind && dbachaind start --home /dbachaind"
