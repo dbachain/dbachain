@@ -1,7 +1,7 @@
 package commands
 
 import (
-	"dbachain/common/utils"
+	"github.com/dbachain/dbachain/common/utils"
 
 	"github.com/cosmos/cosmos-sdk/wire"
 	"github.com/spf13/cobra"

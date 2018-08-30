@@ -7,7 +7,7 @@ import (
 
 	"github.com/tendermint/tmlibs/cli"
 
-	"dbachain/client/lcd"
+	"github.com/dbachain/dbachain/client/lcd"
 
 	"github.com/cosmos/cosmos-sdk/client"
 	"github.com/cosmos/cosmos-sdk/client/keys"
@@ -21,11 +21,11 @@ import (
 	ibccmd "github.com/cosmos/cosmos-sdk/x/ibc/commands"
 	simplestakingcmd "github.com/cosmos/cosmos-sdk/x/simplestake/commands"
 
-	"dbachain/app"
-	"dbachain/types"
-	projectcmd "dbachain/x/project/commands"
-	usercmd "dbachain/x/user/commands"
-	votecmd "dbachain/x/vote/commands"
+	"github.com/dbachain/dbachain/app"
+	"github.com/dbachain/dbachain/types"
+	projectcmd "github.com/dbachain/dbachain/x/project/commands"
+	usercmd "github.com/dbachain/dbachain/x/user/commands"
+	votecmd "github.com/dbachain/dbachain/x/vote/commands"
 )
 
 // rootCmd is the entry point for this binary

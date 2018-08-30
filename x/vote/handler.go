@@ -3,9 +3,9 @@ package vote
 import (
 	"reflect"
 
-	project "dbachain/x/project"
+	project "github.com/dbachain/dbachain/x/project"
 
-	"dbachain/common/log"
+	"github.com/dbachain/dbachain/common/log"
 	"encoding/json"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"

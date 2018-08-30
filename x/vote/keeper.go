@@ -1,7 +1,7 @@
 package vote
 
 import (
-	"dbachain/common/log"
+	"github.com/dbachain/dbachain/common/log"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	"github.com/cosmos/cosmos-sdk/wire"

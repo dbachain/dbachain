@@ -6,7 +6,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/wire"
 	"github.com/spf13/cobra"
 
-	"dbachain/x/vote"
+	"github.com/dbachain/dbachain/x/vote"
 	"fmt"
 
 	"github.com/cosmos/cosmos-sdk/client/context"

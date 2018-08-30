@@ -13,7 +13,7 @@ import (
 	"github.com/cosmos/cosmos-sdk/client/core"
 	"github.com/cosmos/cosmos-sdk/wire"
 
-	"dbachain/x/user"
+	"github.com/dbachain/dbachain/x/user"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 

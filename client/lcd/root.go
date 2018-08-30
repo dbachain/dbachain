@@ -22,10 +22,10 @@ import (
 	bank "github.com/cosmos/cosmos-sdk/x/bank/rest"
 	ibc "github.com/cosmos/cosmos-sdk/x/ibc/rest"
 
-	"dbachain/common/utils"
-	project "dbachain/x/project/rest"
-	user "dbachain/x/user/rest"
-	vote "dbachain/x/vote/rest"
+	"github.com/dbachain/dbachain/common/utils"
+	project "github.com/dbachain/dbachain/x/project/rest"
+	user "github.com/dbachain/dbachain/x/user/rest"
+	vote "github.com/dbachain/dbachain/x/vote/rest"
 )
 
 const (

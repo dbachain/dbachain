@@ -1,8 +1,8 @@
 package commands
 
 import (
-	"dbachain/common/utils"
-	"dbachain/x/user"
+	"github.com/dbachain/dbachain/common/utils"
+	"github.com/dbachain/dbachain/x/user"
 	"errors"
 
 	"github.com/spf13/cobra"

@@ -10,11 +10,11 @@ import (
 	dbm "github.com/tendermint/tmlibs/db"
 	"github.com/tendermint/tmlibs/log"
 
-	"dbachain/types"
-	"dbachain/x/user"
-	"dbachain/x/vote"
+	"github.com/dbachain/dbachain/types"
+	"github.com/dbachain/dbachain/x/user"
+	"github.com/dbachain/dbachain/x/vote"
 
-	"dbachain/x/project"
+	"github.com/dbachain/dbachain/x/project"
 
 	bam "github.com/cosmos/cosmos-sdk/baseapp"
 	sdk "github.com/cosmos/cosmos-sdk/types"

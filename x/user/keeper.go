@@ -5,8 +5,8 @@ import (
 	"github.com/cosmos/cosmos-sdk/wire"
 	"github.com/cosmos/cosmos-sdk/x/auth"
 
-	"dbachain/common/log"
-	"dbachain/types"
+	"github.com/dbachain/dbachain/common/log"
+	"github.com/dbachain/dbachain/types"
 )
 
 const (

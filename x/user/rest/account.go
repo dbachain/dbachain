@@ -3,8 +3,8 @@ package rest
 import (
 	"net/http"
 
-	"dbachain/common/utils"
-	"dbachain/x/user"
+	"github.com/dbachain/dbachain/common/utils"
+	"github.com/dbachain/dbachain/x/user"
 
 	"github.com/cosmos/cosmos-sdk/wire"
 	cmn "github.com/tendermint/tmlibs/common"

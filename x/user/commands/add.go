@@ -1,8 +1,8 @@
 package commands
 
 import (
-	"dbachain/common/log"
-	"dbachain/x/user"
+	"github.com/dbachain/dbachain/common/log"
+	"github.com/dbachain/dbachain/x/user"
 	"errors"
 	"fmt"
 
@@ -13,7 +13,7 @@ import (
 	"github.com/spf13/viper"
 	keys "github.com/tendermint/go-crypto/keys"
 
-	"dbachain/common/utils"
+	"github.com/dbachain/dbachain/common/utils"
 )
 
 func addUserCommand(cdc *wire.Codec) *cobra.Command {

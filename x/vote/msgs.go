@@ -1,7 +1,7 @@
 package vote
 
 import (
-	"dbachain/common/log"
+	"github.com/dbachain/dbachain/common/log"
 
 	"strings"
 

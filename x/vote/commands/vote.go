@@ -1,14 +1,14 @@
 package commands
 
 import (
-	"dbachain/common/log"
-	"dbachain/common/utils"
+	"github.com/dbachain/dbachain/common/log"
+	"github.com/dbachain/dbachain/common/utils"
 	"errors"
 
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 
-	"dbachain/x/vote"
+	"github.com/dbachain/dbachain/x/vote"
 	"time"
 
 	"github.com/cosmos/cosmos-sdk/client/context"

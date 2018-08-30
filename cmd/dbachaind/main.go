@@ -4,7 +4,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"dbachain/app"
+	"github.com/dbachain/dbachain/app"
 
 	"github.com/spf13/cobra"
 

@@ -1,9 +1,9 @@
 package commands
 
 import (
-	"dbachain/common/log"
-	"dbachain/common/utils"
-	"dbachain/x/user"
+	"github.com/dbachain/dbachain/common/log"
+	"github.com/dbachain/dbachain/common/utils"
+	"github.com/dbachain/dbachain/x/user"
 	"errors"
 
 	"github.com/cosmos/cosmos-sdk/client"

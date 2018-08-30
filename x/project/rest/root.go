@@ -1,7 +1,7 @@
 package rest
 
 import (
-	"dbachain/x/user"
+	"github.com/dbachain/dbachain/x/user"
 
 	"github.com/cosmos/cosmos-sdk/wire"
 	"github.com/gorilla/mux"
